@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,17 +7,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const axios_1 = __importDefault(require("axios"));
+import axios from 'axios';
 const API_URL = 'http://localhost:28469/weather';
-exports.default = ({ context, onComplete, onError }) => {
+export default ({ context, onComplete, onError }) => {
     return {
         calculate: () => __awaiter(void 0, void 0, void 0, function* () {
             try {
-                const res = yield axios_1.default.get(`${API_URL}?latitude=${context.lat}&longitude=${context.lan}`);
+                const res = yield axios.get(`${API_URL}?latitude=${context.lat}&longitude=${context.lan}`);
                 onComplete({
                     country: res.data.country,
                     city: res.data.city,
@@ -26,7 +21,6 @@ exports.default = ({ context, onComplete, onError }) => {
                 });
             }
             catch (err) {
-                console.log(err);
                 onError(err.message);
             }
         }),

@@ -1,11 +1,15 @@
 {
-  "name": "sdk",
+  "name": "weather-sdk",
   "version": "1.0.0",
   "description": "",
-  "main": "weatherWidgetSDK.js",
+  "main": "dist/weatherWidgetSDK.js",
   "scripts": {
+    "build": "tsc --build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.8.3"
+  }
 }

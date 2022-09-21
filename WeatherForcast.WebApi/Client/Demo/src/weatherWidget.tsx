@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import weatherWidgetSDK from 'sdk';
+import weatherWidgetSDK from 'weather-sdk';
 interface WidgetFieldValues {
   lan: number;
   lat: number;
@@ -21,8 +21,11 @@ export const WeatherWidget = () => {
         lan: values.lan,
         lat: values.lat,
       },
-      onComplete: (res) => reset({ ...values, ...res }),
-      onError: (err) => setError(err),
+      onComplete: (res: any) => reset({ ...values, ...res }),
+      onError: (err: any) => {
+        reset();
+        setError(err);
+      },
     }).calculate();
   };
   return (

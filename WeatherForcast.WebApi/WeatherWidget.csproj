@@ -6,6 +6,7 @@
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
+    <SDKRoot>Client\SDK</SDKRoot>
     <DemoRoot>Client\Demo</DemoRoot>
     <DefaultItemExcludes>$(DefaultItemExcludes);$(DemoRoot)node_modules\**</DefaultItemExcludes>
     <SpaProxyServerUrl>http://localhost:44448</SpaProxyServerUrl>
@@ -43,6 +44,8 @@
     </Exec>
     <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
     <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SDKRoot)" Command="npm run build" />
+    <Exec WorkingDirectory="$(SDKRoot)" Command="npm link" />
     <Exec WorkingDirectory="$(DemoRoot)" Command="npm install" />
   </Target>
 

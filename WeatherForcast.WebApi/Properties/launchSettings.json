@@ -17,8 +17,7 @@
     },
     "WeatherWidget": {
       "commandName": "Project",
-      "launchBrowser": false,
-      "applicationUrl": "http://localhost:3001",
+      "applicationUrl": "http://localhost:28469",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
