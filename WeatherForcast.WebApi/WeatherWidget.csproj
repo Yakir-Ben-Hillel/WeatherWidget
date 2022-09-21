@@ -29,12 +29,8 @@
     <None Remove="Microsoft.Extensions.DependencyInjection" />
     <None Remove="Microsoft.Extensions.Configuration" />
     <None Remove="Microsoft.Extensions.Configuration.Binder" />
-    <None Remove="Models\" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WeatherForcast.Services\WeatherWidget.Services.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>

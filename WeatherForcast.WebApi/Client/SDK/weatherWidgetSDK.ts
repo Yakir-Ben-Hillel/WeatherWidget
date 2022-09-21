@@ -32,8 +32,8 @@ export default ({ context, onComplete, onError }: WidgetInput) => {
           city: res.data.city,
           temperature: res.data.temperature,
         })
-      } catch (err) {
-        onError(err)
+      } catch (err: any) {
+        onError(err.message)
       }
     },
   }

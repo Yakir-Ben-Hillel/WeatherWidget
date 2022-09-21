@@ -5,7 +5,7 @@ namespace WeatherWidget.Services.Models
     {
         public string Country { get; set; } = string.Empty;
         public string City { get; set; } = string.Empty;
-        public double Tempature { get; set; }
+        public double Temperature { get; set; }
         public string? Error { get; set; } = null;
         public int StatusCode { get; set; }
     }

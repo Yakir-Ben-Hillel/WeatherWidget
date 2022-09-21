@@ -42,9 +42,10 @@ app.UseFileServer(new FileServerOptions
     EnableDefaultFiles = true
 });
 app.UseRouting();
-app.UseCors();
-
-
+app.UseCors(builder => builder.
+AllowAnyOrigin().
+AllowAnyMethod().
+AllowAnyHeader());
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller}/{action=Index}/{id?}");

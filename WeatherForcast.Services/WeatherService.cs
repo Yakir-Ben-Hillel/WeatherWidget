@@ -41,9 +41,12 @@ public class WeatherService : IWeatherService
         }
         else
         {
-            weatherResponse.Country = apiResponse.Sys.Country;
+            var country = ISO3166.Country.List
+                .Where((country) =>
+                country.TwoLetterCode == apiResponse.Sys.Country).FirstOrDefault();
+            weatherResponse.Country = country.Name;
             weatherResponse.City = apiResponse.City;
-            weatherResponse.Tempature = apiResponse.Main.Tempature;
+            weatherResponse.Temperature = apiResponse.Main.Temperature;
         }
         return weatherResponse;
     }

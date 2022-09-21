@@ -6,7 +6,7 @@ namespace WeatherWidget.Services.Models
     public class Main
     {
         [JsonProperty("temp")]
-        public double Tempature { get; set; }
+        public double Temperature { get; set; }
     }
 }
 
