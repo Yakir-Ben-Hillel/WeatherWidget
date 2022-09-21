@@ -57,11 +57,11 @@ export const WeatherWidget = () => {
             name='lan'
             render={({ field: { onChange } }) => (
               <input
-                style={{ marginRight: 12 }}
-                step={'any'}
-                placeholder={'lan'}
-                onChange={onChange}
                 type={'number'}
+                step={'any'}
+                placeholder={'Lan'}
+                onChange={onChange}
+                style={{ marginRight: 12 }}
               />
             )}
           />
